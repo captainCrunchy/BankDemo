@@ -45,9 +45,13 @@ public class MainMenu extends Menu {
 		System.out.println("--------------------------------------");
 	}
 	
+	private void listAccountsBasedOnBalance() {
+		System.out.println("These are the accounts below the balance");
+	}
+	
 	private BankAccount chooseAccount() throws Exception{
 		this.listAccounts();
-		System.out.println("Please enter the accound number:  " );
+		System.out.println("Please enter the account number:  " );
 		String choiceStr = stdin.readLine();
 		
 		for ( BankAccount ba : bank.getAccounts()) {
@@ -59,12 +63,18 @@ public class MainMenu extends Menu {
 		return null;
 	}
 	
+	private BankAccount chooseAccountBasedOnBalance() throws Exception {
+		System.out.println("Please enter a balance to compare to existing accounts");
+		String choiceStr = stdin.readLine();
+		return null;
+	}
 	
 	@Override
 	public Menu invokeMenu() throws Exception {
 		System.out.println("--------------------------------------");
 		System.out.println("1)  Create account");
 		System.out.println("2)  List / Choose from existing accounts");
+		System.out.println("3)  List accounts below a certain balance");
 		System.out.println("X)  Exit");
 		System.out.println("Please enter a choice:  " );
 		String choiceStr = stdin.readLine();
@@ -75,6 +85,11 @@ public class MainMenu extends Menu {
 			BankAccount account = this.chooseAccount();
 			if ( account == null ) return this;
 			else return new AccountMenu(this, bank, account);	
+		}
+		else if ("3".equals(choiceStr)) {
+			BankAccount account = this.chooseAccountBasedOnBalance();
+			if ( account == null ) return this;
+			return this;
 		}
 		else if ( "X".equalsIgnoreCase(choiceStr)){
 			return previous;
