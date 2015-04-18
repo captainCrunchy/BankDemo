@@ -1,0 +1,12 @@
+04-18 17:34:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "BANKACCOUNT" not found; SQL statement:
+SELECT * FROM BANKACCOUNT [42102-163]
+04-18 17:34:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "BANKACCOUNT" not found; SQL statement:
+SELECT * FROM BANKACCOUNT [42102-163]
+04-18 17:36:13 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "BANKACCOUNT" not found; SQL statement:
+SELECT * FROM BANKACCOUNT [42102-163]
+04-18 17:36:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "BANKACCOUNT" not found; SQL statement:
+SELECT * FROM BANKACCOUNT [42102-163]
